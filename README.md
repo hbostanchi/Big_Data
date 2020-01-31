@@ -59,10 +59,11 @@ At this point, you might ask how this relates to big data. Due to the massive am
 •	Classifying text: For many of the aforementioned use cases to work, a computer must know how to classify a given piece of text. Classification can mean a few different things in NLP. You can have classification of specific words, even specifying what the part of speech is. You can also classify what the text is as a whole.
 •	Extracting information: Many NLP tasks require the ability to retrieve specific pieces of information from a given document. Think of the case where we are extracting data from law documents. You might want to extract certain aspects of that document to present good cases.
 •	Summarizing a document: Summarization is a key aspect of NLP. It helps solve quite a few different problems. You can essentially create a model that summarizes a given document. This can be helpful to understand the high-level details of law documents, articles, and much more.
-Context of Natural Language
+###  Natural Language
 Natural language can be complicated because the way it’s written is not always how it is intended. Therefore, you might need the full context to understand the meaning.
 Sarcasm is a great example. Say you had a bad experience at a restaurant. Your friend asks if you liked your meal and you reply “Oh, yeah, the food was amazing if you like dry, bland food.” A friend familiar with your humor would understand your true intentions behind the quip. However, a straight reading, without detecting sarcasm, would give the impression you prefer dry, bland food.
 Another challenge is interpreting the tone behind the text. For instance, snidely remarking “Great” and enthusiastically exclaiming “Great!” reveal two distinct tones but, in text, it is the same word.
+
 These are just two examples of the complexity of dealing with natural language. In the next section, we'll show how a computer does its best to interpret language.
  Computers Understanding Language
 Computers comprehend language differently than humans do, so you have to teach the computer how to understand natural language.
@@ -80,26 +81,26 @@ Normalization is the concept of taking misspelled words and converting them into
 •	Lemmatization removes the suffix from a word and reduces it to its original form. Lemmatization tends to be a “smoother” cut off of the end of the word. It tries to return to the original root word.
 Explain how to use AWS Simple Storage Service (S3) and relational databases for basic cloud storage.
 S3 is Amazon’s cloud file storage service that uses key-value pairs. Files are stored on multiple servers and have a high rate of availability of more than 99.9%. To store files, S3 uses buckets, which are similar to folders or directories on your computer. Buckets can contain additional folders and files. Each bucket must have a unique name across all of AWS.
-•	One of S3’s perks is its fine-grained control over files. Each file or bucket can have different read and write permissions, which helps regulate what can be done with each file.
-•	S3 is also very scalable—you are not limited to the memory of one computer. As data flows in, more and more can be stored, as opposed to a local computer that is limited by available memory.
-•	Additionally, it offers availability—several team members can access massive amounts of data from one central location.
++	One of S3’s perks is its fine-grained control over files. Each file or bucket can have different read and write permissions, which helps regulate what can be done with each file.
++	S3 is also very scalable—you are not limited to the memory of one computer. As data flows in, more and more can be stored, as opposed to a local computer that is limited by available memory.
++	Additionally, it offers availability—several team members can access massive amounts of data from one central location.
 ## Challenge Overview
 Complete an analysis of an Amazon customer review.
 Many of Amazon's shoppers depend on product reviews to make a purchase. Amazon makes these datasets publicly available. However, they are quite large and can exceed the capacity of local machines to handle. One dataset alone contains more than 1.5 million rows. With more than 40 datasets, this can be quite taxing on the average local computer.
-Challenge Objectives
-•	Perform ETL on one of the review datasets.
-•	Store your results on an AWS RDS database.
-•	Determine if reviews are biased using PySpark or SQL with the appropriate statistical methods.
+## Challenge Objectives
++	Perform ETL on one of the review datasets.
++	Store your results on an AWS RDS database.
++	Determine if reviews are biased using PySpark or SQL with the appropriate statistical methods.
 ## Challenge Summary
 Instructions
-1.) Use the furnished schemata to create tables in our RDS database.
-2.) Create a Google Colab Notebook and extract any dataset from the list of review datasets , one into each notebook.
-3.) For the notebook, complete the following:
-•	Extract the dataset from the S3 bucket and load into a DataFrame.
-•	Count the number of records (rows) in the dataset.
-•	Transform the dataset to fit the tables in the schema file.
-•	Load the DataFrames that correspond to tables into an RDS instance.
-4.) Use either PySpark or SQL to analyze the data and determine if the Vine reviews are biased.
-•	If you choose to use SQL, use the vine_table from the result of the previous step. Perform your analysis with SQL queries on RDS.
-•	If you choose to use PySpark, create a new notebook and perform your analysis there.
-•	Consider steps to take to reduce noisy data.
+1+) Use the furnished schemata to create tables in our RDS database.
+2+) Create a Google Colab Notebook and extract any dataset from the list of review datasets , one into each notebook.
+3+) For the notebook, complete the following:
++	Extract the dataset from the S3 bucket and load into a DataFrame.
++	Count the number of records (rows) in the dataset.
++	Transform the dataset to fit the tables in the schema file.
++	Load the DataFrames that correspond to tables into an RDS instance.
+4+) Use either PySpark or SQL to analyze the data and determine if the Vine reviews are biased.
++	If you choose to use SQL, use the vine_table from the result of the previous step. Perform your analysis with SQL queries on RDS.
++	If you choose to use PySpark, create a new notebook and perform your analysis there.
++	Consider steps to take to reduce noisy data.
