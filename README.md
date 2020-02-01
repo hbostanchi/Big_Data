@@ -136,7 +136,7 @@ Many of Amazon's shoppers depend on product reviews to make a purchase. Amazon m
 ## Challenge Summary
 Instructions
 1) Use the furnished schemata to create tables in our RDS database.
-2) Create a Google Colab Notebook and extract any dataset from the list of review datasets(https://s3.amazonaws.com/amazon-reviews-pds/tsv/index.txt), one into each notebook.
+2) Create a Google Colab Notebook and extract any dataset from the list of [review datasets](https://s3.amazonaws.com/amazon-reviews-pds/tsv/index.txt), one into each notebook.
 3) For the notebook, complete the following:
 +	Extract the dataset from the S3 bucket and load into a DataFrame.
 +	Count the number of records (rows) in the dataset.
