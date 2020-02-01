@@ -52,14 +52,14 @@ The Spark architecture includes the driver, executors, and the cluster manager:
 ## Natural language processing (NLP) 
 is a growing field of study that combines linguistics and computer science for computers to understand written, spoken, and typed natural language. NLP is the process of converting normal language to a machine readable format, which allows a computer to analyze text as if it were numerical data.
 While NLP has a wide variety of use cases, and the field is rapidly growing, there are a few use cases that are particularly interesting:
-•	Analyzing legal documents: NLP can be used to analyze many types of legal documents. This can improve the outcome of a given case, as lawyers and staff can find critical information quickly.
-•	U.S. Securities and Exchange Commission (SEC) filings: NLP is used to analyze SEC filings for various businesses. Companies use NLP to analyze filings for real-time business intelligence.
-•	Chatbots: Chatbots are one of the most popular use cases. Chatbots can be used for selling products, customer support, and even medical help.
++	Analyzing legal documents: NLP can be used to analyze many types of legal documents. This can improve the outcome of a given case, as lawyers and staff can find critical information quickly.
++	U.S. Securities and Exchange Commission (SEC) filings: NLP is used to analyze SEC filings for various businesses. Companies use NLP to analyze filings for real-time business intelligence.
++	Chatbots: Chatbots are one of the most popular use cases. Chatbots can be used for selling products, customer support, and even medical help.
 At this point, you might ask how this relates to big data. Due to the massive amounts of text data needed to drive insights, we'll have to learn how to manage that data. There are a number of important use cases to delve into:
-•	Classifying text: For many of the aforementioned use cases to work, a computer must know how to classify a given piece of text. Classification can mean a few different things in NLP. You can have classification of specific words, even specifying what the part of speech is. You can also classify what the text is as a whole.
-•	Extracting information: Many NLP tasks require the ability to retrieve specific pieces of information from a given document. Think of the case where we are extracting data from law documents. You might want to extract certain aspects of that document to present good cases.
-•	Summarizing a document: Summarization is a key aspect of NLP. It helps solve quite a few different problems. You can essentially create a model that summarizes a given document. This can be helpful to understand the high-level details of law documents, articles, and much more.
-###  Natural Language
++	Classifying text: For many of the aforementioned use cases to work, a computer must know how to classify a given piece of text. Classification can mean a few different things in NLP. You can have classification of specific words, even specifying what the part of speech is. You can also classify what the text is as a whole.
++	Extracting information: Many NLP tasks require the ability to retrieve specific pieces of information from a given document. Think of the case where we are extracting data from law documents. You might want to extract certain aspects of that document to present good cases.
++	Summarizing a document: Summarization is a key aspect of NLP. It helps solve quite a few different problems. You can essentially create a model that summarizes a given document. This can be helpful to understand the high-level details of law documents, articles, and much more.
+## Natural Language
 Natural language can be complicated because the way it’s written is not always how it is intended. Therefore, you might need the full context to understand the meaning.
 Sarcasm is a great example. Say you had a bad experience at a restaurant. Your friend asks if you liked your meal and you reply “Oh, yeah, the food was amazing if you like dry, bland food.” A friend familiar with your humor would understand your true intentions behind the quip. However, a straight reading, without detecting sarcasm, would give the impression you prefer dry, bland food.
 Another challenge is interpreting the tone behind the text. For instance, snidely remarking “Great” and enthusiastically exclaiming “Great!” reveal two distinct tones but, in text, it is the same word.
@@ -79,11 +79,53 @@ Tokenized by word: ['I', 'am', 'enjoying', 'learning', 'about', 'NLP', '.']
 Normalization is the concept of taking misspelled words and converting them into their original form. This is another building block in NLP in that it helps get the text to a readable form and allows us to create other use cases on top of it. Essentially, it makes it easier for us to create NLP programs, and it improves the output of those programs. There are numerous ways to accomplish this, but we’ll focus on just two practices: stemming and lemmatization. Stemming and lemmatization are similar in that they both remove the suffix from a word, but there are some differences in how smooth or rough the cutoff tends to be:
 •	Stemming removes the suffix from a word and reduces it to its original form. This serves as a “rough” cut off of the end of the word.
 •	Lemmatization removes the suffix from a word and reduces it to its original form. Lemmatization tends to be a “smoother” cut off of the end of the word. It tries to return to the original root word.
-Explain how to use AWS Simple Storage Service (S3) and relational databases for basic cloud storage.
-S3 is Amazon’s cloud file storage service that uses key-value pairs. Files are stored on multiple servers and have a high rate of availability of more than 99.9%. To store files, S3 uses buckets, which are similar to folders or directories on your computer. Buckets can contain additional folders and files. Each bucket must have a unique name across all of AWS.
-+	One of S3’s perks is its fine-grained control over files. Each file or bucket can have different read and write permissions, which helps regulate what can be done with each file.
-+	S3 is also very scalable—you are not limited to the memory of one computer. As data flows in, more and more can be stored, as opposed to a local computer that is limited by available memory.
-+	Additionally, it offers availability—several team members can access massive amounts of data from one central location.
+### Part-of-Speech Tagging
+When researching or practicing NLP, you’ll often hear of part-of-speech tagging (PoS), which can be helpful for a variety of different models in NLP. PoS tagging is the concept of finding each word’s part of speech in a given document
+### Natural Language Generation
+Natural language generation is a growing field in NLP that entails writing code in such a way that it will generate new text. Popular examples include chatbots, automated custom reports, and custom webpage content. In this module, we won’t write code to generate new text.
+
+Chatbots are easy to create and so are increasingly used in data science, especially NLP. Most of the technology already exists to create meaningful content from natural language generation.
+
+#### Bag-of-Words
+When we’re building datasets for NLP, we need to consider how our program will interact with the text document we provide. If we create a bag-of-words (BoW) model (i.e., the most frequent words), we can build models from that.
+
+The basic idea behind this model is this: We have a document of words, but we don’t care about the order of the words. We can count these words and create models based on how frequently they appear.
+
+#### n-gram
+In NLP, there is an n-gram method, which is a sequence of items from a given text. With n-gram, you create groupings of items from the text of size 1 or more. The following n-grams are common:
+
+Unigram is an n-gram of size 1.
+Bigram is an n-gram of size 2.
+Trigram is an n-gram of size 3.
+Of course, you can always use larger groupings than just size 3, such as “four-gram,” “five-gram,” and so on.
+
+N-grams can be used for a variety of NLP tasks, but most involve text mining or extraction. You can also use n-grams for spellcheck and text summarization.
+
+#### Text Similarity
+Another popular use case for NLP is determining document or sentence similarity. These are important use cases, because they can tell us a lot about a document and its contents. There are a number of ways to do text similarity, with varying levels of difficulty. Many of the technologies that we'll discuss have the ability to compare documents against one another.
+
+#### NLP Analyses
+There are three types of NLP analyses:
+
++ Syntactic analysis is essentially checking the dictionary definition of each element of a sentence or document. In this type of analysis, we don’t care about the words that come before or after the word in question—we just care about the given word.
++ Sentiment analysis pertains to what the text means. Is it positive, negative, or neutral? You can come up with a score of how positive or negative the text is using NLP.
++ Semantic analysis entails extracting the meaning of the text. You want to analyze the meaning of each word, and then relate that to the meaning of the text as a whole.
+#### Named-Entity Recognition
+In NLP, named-entity recognition (NER) is the concept of taking a document and finding all of the important terms therein. By “important,” we mean names of places and people, government organizations, and so forth. Many names are already recognized, but you can always add more names to the list of recognized entities, as necessary.
+
+You train a model on data labeled with important entities so that the model can better distinguish which entities should be labeled in a different dataset.
+
+
+### NLP pipeline breakdown of each step:
+ Raw Text: Start with the raw data.
+Tokenization: Separate the words from paragraphs, to sentences, to individual words.
+Stop Words Filtering: Remove common words like “a” and “the” that add no real value to what we are looking to analyze.
+Term Frequency-Inverse Document Frequency (TF-IDF): Statistically rank the words by importance compared to the rest of the words in the text. This is also when the words are converted from text to numbers.
+Machine Learning: Put everything together and run through the machine learning model to produce an output.
+
+
+
+
 ## Challenge Overview
 Complete an analysis of an Amazon customer review.
 Many of Amazon's shoppers depend on product reviews to make a purchase. Amazon makes these datasets publicly available. However, they are quite large and can exceed the capacity of local machines to handle. One dataset alone contains more than 1.5 million rows. With more than 40 datasets, this can be quite taxing on the average local computer.
@@ -93,14 +135,14 @@ Many of Amazon's shoppers depend on product reviews to make a purchase. Amazon m
 +	Determine if reviews are biased using PySpark or SQL with the appropriate statistical methods.
 ## Challenge Summary
 Instructions
-1+) Use the furnished schemata to create tables in our RDS database.
-2+) Create a Google Colab Notebook and extract any dataset from the list of review datasets , one into each notebook.
-3+) For the notebook, complete the following:
+1) Use the furnished schemata to create tables in our RDS database.
+2) Create a Google Colab Notebook and extract any dataset from the list of review datasets , one into each notebook.
+3) For the notebook, complete the following:
 +	Extract the dataset from the S3 bucket and load into a DataFrame.
 +	Count the number of records (rows) in the dataset.
 +	Transform the dataset to fit the tables in the schema file.
 +	Load the DataFrames that correspond to tables into an RDS instance.
-4+) Use either PySpark or SQL to analyze the data and determine if the Vine reviews are biased.
+4) Use either PySpark or SQL to analyze the data and determine if the Vine reviews are biased.
 +	If you choose to use SQL, use the vine_table from the result of the previous step. Perform your analysis with SQL queries on RDS.
 +	If you choose to use PySpark, create a new notebook and perform your analysis there.
 +	Consider steps to take to reduce noisy data.
